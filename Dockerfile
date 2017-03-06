@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y supervisor
 
 WORKDIR /var/www/symfony
 
+ENV SUPERVISOR_CONF ""
+
 COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
