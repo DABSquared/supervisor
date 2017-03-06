@@ -10,4 +10,4 @@ COPY docker-entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD /usr/bin/supervisord -n -c /etc/supervisor/conf.d/supervisord.conf -e debug
+CMD supervisord -n -c /etc/supervisor/conf.d/supervisord.conf -e debug
