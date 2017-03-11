@@ -14,4 +14,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["supervisord", "-n","-c", "/etc/supervisor/conf.d/supervisord.conf", "-e", "debug"]
 
-HEALTHCHECK CMD curl --fail "http://127.0.0.1:9001/_cat/health?h=status" || exit 1
+HEALTHCHECK CMD curl --fail "http://127.0.0.1:9001" || exit 1
