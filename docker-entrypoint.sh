@@ -4,10 +4,10 @@ set -e
 if [ "$1" = 'supervisord' ]; then
 	if [ "$SUPERVISOR_CONF" ]; then
         cp $SUPERVISOR_CONF /etc/supervisor/conf.d/supervisord.conf
-        sed -e "s|REDISPREFIX|$symfony.redis_prefix|g" /etc/supervisor/conf.d/supervisord.conf > /etc/supervisor/conf.d/supervisord.conf
-        sed -e "s|REDISHOST|$symfony.redis_host|g" /etc/supervisor/conf.d/supervisord.conf > /etc/supervisor/conf.d/supervisord.conf
-        sed -e "s|REDISPORT|$symfony.redis_port|g" /etc/supervisor/conf.d/supervisord.conf > /etc/supervisor/conf.d/supervisord.conf
-        sed -e "s|REDISDB|$symfony.redis_database|g" /etc/supervisor/conf.d/supervisord.conf > /etc/supervisor/conf.d/supervisord.conf
+        sed -i "s|REDISPREFIX|$symfony_redis_prefix|g" /etc/supervisor/conf.d/supervisord.conf
+        sed -i "s|REDISHOST|$symfony_redis_host|g" /etc/supervisor/conf.d/supervisord.conf
+        sed -i "s|REDISPORT|$symfony_redis_port|g" /etc/supervisor/conf.d/supervisord.conf
+        sed -i "s|REDISDB|$symfony_redis_database|g" /etc/supervisor/conf.d/supervisord.conf
     fi
 fi
 
