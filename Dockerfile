@@ -2,7 +2,17 @@ FROM dabsquared/php-fpm
 
 LABEL maintainer "dbrooks@dabsquared.com"
 
-RUN apt-get update && apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor python-setuptools python-pip
+
+WORKDIR /var
+
+RUN git clone https://github.com/peterfroehlich/supervisor-logging.git
+
+WORKDIR /var/supervisor-logging
+RUN pip install
+RUN python setup.py install
+
+
 
 WORKDIR /var/www/symfony
 
