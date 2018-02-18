@@ -2,7 +2,7 @@ FROM dabsquared/php-fpm
 
 LABEL maintainer "dbrooks@dabsquared.com"
 
-RUN apt-get update && apt-get install -y supervisor python-setuptools python-pip
+RUN apt-get update && apt-get install -y supervisor python-setuptools python-pip procps
 
 WORKDIR /var
 
